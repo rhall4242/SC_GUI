@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="yx74dV" name="SC_GUI" projectType="guiapp" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" headerPath="/home/rhall/JUCE/projects/SC_Lib/Source">
+  <MAINGROUP id="NIfzl6" name="SC_GUI">
+    <GROUP id="{26A9ABEA-80AA-AE1A-00D0-8D6945C63366}" name="Source">
+      <FILE id="xDTluT" name="Capture.cpp" compile="1" resource="0" file="Source/Capture.cpp"/>
+      <FILE id="wDSUZH" name="Capture.h" compile="0" resource="0" file="Source/Capture.h"/>
+      <FILE id="NH1bCw" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="eNoqtm" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="CN7ivd" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <EXPORTFORMATS>
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile" externalLibraries="SC_Lib">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="SC_GUI"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="SC_GUI"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../modules"/>
+        <MODULEPATH id="juce_events" path="../../modules"/>
+        <MODULEPATH id="juce_graphics" path="../../modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../modules"/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <LINUX/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
