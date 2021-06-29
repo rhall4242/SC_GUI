@@ -1,9 +1,13 @@
 #include "MainComponent.h"
 
 //==============================================================================
-MainComponent::MainComponent()
+MainComponent::MainComponent() : graph(&grid)
 {
-    setSize (600, 400);
+    grid.nodeInit();
+    setSize (1600, 800);
+    graphButton.onClick = graphClicked;
+    addAndMakeVisible(graphButton);
+    addAndMakeVisible(graph);
 }
 
 MainComponent::~MainComponent()
@@ -26,4 +30,31 @@ void MainComponent::resized()
     // This is called when the MainComponent is resized.
     // If you add any child components, this is where you should
     // update their positions.
+  graphButton.setBounds(25, 15, 60, 20);
+  graph.setBounds(25, 40, 1550, 750);
 }
+
+void MainComponent::graphMenu()
+{
+    juce::PopupMenu m;
+    m.addItem (1, "Run");
+    m.addItem (2, "Show Graph");
+ 
+    const int result = m.show();
+ 
+    if (result == 0)
+    {
+        // user dismissed the menu without picking anything
+    }
+    else if (result == 1)
+    {
+      grid.run();
+    }
+    else if (result == 2)
+    {
+      graph.repaint();
+    }      
+
+}
+
+

@@ -9,6 +9,7 @@
 */
 
 #include "Capture.h"
+#include "MainComponent.h"
 
 Capture::Capture(Connector *c, std::string nm)
 {
@@ -88,8 +89,6 @@ void CaptureGrid::nodeInit()
     addCapture(c4);
     Capture* c5 = new Capture(gateOut, "Gate Out");
     addCapture(c5);
-    run();
-    std::cout << "Done";
 }
 
 Connection* CaptureGrid::createConnection(OutputConnector *in, InputConnector *out, juce::String nm)
@@ -117,7 +116,7 @@ void CaptureGrid::run(int startSample, int numSamples)
   {
     if (s == onSample)
     {
-      startNote(60);
+      startNote(36);
     }
     if (s == offSample)
     {
@@ -130,6 +129,7 @@ void CaptureGrid::run(int startSample, int numSamples)
       c->updatePoint(s);
     }
   }
+  valid = true;
 }
 
 void CaptureGrid::startNote(int midiNoteNumber)

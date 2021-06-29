@@ -10,7 +10,8 @@
 
 #pragma once
 
-#include "MainComponent.h"
+#include "Connector.h"
+#include "Node.h"
 
 class Capture
 {
@@ -27,9 +28,11 @@ public:
 class CaptureGrid : public std::vector<Capture*>
 {
 public:
+  bool valid {false};
   const int maxCaptures {6};
   int onSample {0};
   int offSample {48000};
+  int nSamples {96000};
   NodeTree nodeTree;
   ConnectionTree connectionTree;
 

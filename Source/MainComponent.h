@@ -9,6 +9,7 @@
 #include "MSEGNode.h"
 #include "AudioOutputNode.h"
 #include "Capture.h"
+#include "GraphComponent.h"
 
 class SC_GUIApplication;
 static SC_GUIApplication* theApp;
@@ -28,6 +29,14 @@ public:
     //==============================================================================
     void paint (juce::Graphics&) override;
     void resized() override;
+
+    juce::TextButton graphButton {"Graph"};
+    void graphMenu();
+    std::function<void()> graphClicked {[this] (){ graphMenu();}};
+
+    CaptureGrid grid;
+    GraphComponent graph;
+
 
 private:
     //==============================================================================

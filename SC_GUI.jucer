@@ -4,6 +4,10 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" headerPath="/home/rhall/JUCE/projects/SC_Lib/Source">
   <MAINGROUP id="NIfzl6" name="SC_GUI">
     <GROUP id="{26A9ABEA-80AA-AE1A-00D0-8D6945C63366}" name="Source">
+      <FILE id="oPzL8x" name="GraphComponent.cpp" compile="1" resource="0"
+            file="Source/GraphComponent.cpp"/>
+      <FILE id="CHD4Ty" name="GraphComponent.h" compile="0" resource="0"
+            file="Source/GraphComponent.h"/>
       <FILE id="xDTluT" name="Capture.cpp" compile="1" resource="0" file="Source/Capture.cpp"/>
       <FILE id="wDSUZH" name="Capture.h" compile="0" resource="0" file="Source/Capture.h"/>
       <FILE id="NH1bCw" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>

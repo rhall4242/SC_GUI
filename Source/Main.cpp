@@ -25,7 +25,6 @@ public:
     {
         // This method is where you should put your application's initialisation code..
         theApp = this;
-        grid.nodeInit();
         mainWindow.reset (new MainWindow (getApplicationName()));
     }
 
@@ -50,8 +49,6 @@ public:
         // this method is invoked, and the commandLine parameter tells you what
         // the other instance's command-line arguments were.
     }
-
-    CaptureGrid grid;
 
     //==============================================================================
     /*
