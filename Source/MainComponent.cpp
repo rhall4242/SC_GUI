@@ -39,6 +39,7 @@ void MainComponent::graphMenu()
     juce::PopupMenu m;
     m.addItem (1, "Run");
     m.addItem (2, "Show Graph");
+    m.addItem (3, "Load Layout");
  
     const int result = m.show();
  
@@ -54,6 +55,11 @@ void MainComponent::graphMenu()
     {
       graph.repaint();
     }      
+    else if (result == 3)
+    {
+      grid.loadLayout();
+    }      
+
 
 }
 

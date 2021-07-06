@@ -42,5 +42,6 @@ public:
   void run(int startSample = 0, int nSamples = 96000);
   void startNote(int noteNum);
   void stopNote();
+  void loadLayout();
 
 };

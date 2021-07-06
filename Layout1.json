@@ -1,0 +1,4 @@
+{
+    "nodes" : [["MidiInputNode", "SysMidiInputNode"], ["MonoOsc1Node", "MonoOsc1Node"], ["AudioOutputNode", "SysAudioOutputNode"]],
+    "connections" : [["SysMidiInputNode", "MidiOutput", "MonoOsc1Node", "MidiInput"], ["SysMidiInputNode", "GateOutput", "MonoOsc1Node", "GateInput"], ["MonoOsc1Node", "AudioOutput", "SysAudioOutputNode", "AudioInput"]]
+}

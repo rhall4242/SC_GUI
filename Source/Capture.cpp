@@ -79,16 +79,16 @@ void CaptureGrid::nodeInit()
     MonoControlInputConnector* optionIn2 =  dynamic_cast<MonoControlInputConnector*>(monoOsc1Node2->inputs["OptionInput"]);
     MonoControlOutputConnector* optionOut2 = dynamic_cast<MonoControlOutputConnector*>(value8Node->outputs["V4Output"]);
     createConnection(optionOut, optionIn);
-    Capture* c1 = new Capture(audioOut, "Audio Out");
-    addCapture(c1);
-    Capture* c2 = new Capture(audioOut2, "Audio Out 2");
-    addCapture(c2);
-    Capture* c3 = new Capture(msegOut, "MSEG Out 1");
-    addCapture(c3);
-    Capture* c4 = new Capture(msegOut2, "MSEG Out 2");
-    addCapture(c4);
-    Capture* c5 = new Capture(gateOut, "Gate Out");
-    addCapture(c5);
+//    Capture* c1 = new Capture(audioOut, "Audio Out");
+//    addCapture(c1);
+//    Capture* c2 = new Capture(audioOut2, "Audio Out 2");
+//    addCapture(c2);
+//    Capture* c3 = new Capture(msegOut, "MSEG Out 1");
+//    addCapture(c3);
+//    Capture* c4 = new Capture(msegOut2, "MSEG Out 2");
+//    addCapture(c4);
+//    Capture* c5 = new Capture(gateOut, "Gate Out");
+//    addCapture(c5);
 }
 
 Connection* CaptureGrid::createConnection(OutputConnector *in, InputConnector *out, juce::String nm)
@@ -160,3 +160,20 @@ void CaptureGrid::stopNote()
   node->setGate(gate);
 }
 
+void CaptureGrid::loadLayout()
+{
+  connectionTree.clearTree();
+  nodeTree.clearTree();
+  juce::File f("/home/rhall/JUCE/projects/SC_GUI/Layout1.json");
+  juce::String json = f.loadFileAsString();
+  nodeTree.fromJSON(json);
+  connectionTree.fromJSON(json, &nodeTree);
+  MidiInputNode* midiInputNode = dynamic_cast<MidiInputNode*>(nodeTree.getByName("SysMidiInputNode"));
+  MonoControlOutputConnector* gateOut = dynamic_cast<MonoControlOutputConnector*>(midiInputNode->outputs["GateOutput"]);
+  MonoOsc1Node* monoOsc1Node = dynamic_cast<MonoOsc1Node*>(nodeTree.getByName("MonoOsc1Node"));
+  MonoAudioOutputConnector* audioOut = dynamic_cast<MonoAudioOutputConnector*>(monoOsc1Node->outputs["AudioOutput"]);
+  Capture* c1 = new Capture(audioOut, "Audio Out");
+  addCapture(c1);
+  Capture* c5 = new Capture(gateOut, "Gate Out");
+  addCapture(c5);
+}
